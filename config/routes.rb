@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root :to => "dog_owner_profiles#index"
   resources :authorized_associates
   resources :saved_appointments
