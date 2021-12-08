@@ -1,5 +1,7 @@
 ActiveAdmin.register DogOwnerProfile do
 
+ permit_params :first_name, :last_name, :phone, :home_address, :user_id, :email, :authorized_associates_id
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
