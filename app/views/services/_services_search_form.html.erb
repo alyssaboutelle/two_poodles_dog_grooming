@@ -1,0 +1,110 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "services_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :shampoo_cont, "Shampoo contains" %>
+    <%= f.text_field :shampoo_cont, :class => "form-control", :placeholder => "Shampoo contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :brushing_cont, "Brushing contains" %>
+    <%= f.text_field :brushing_cont, :class => "form-control", :placeholder => "Brushing contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :hair_trim_cont, "Hair trim contains" %>
+    <%= f.text_field :hair_trim_cont, :class => "form-control", :placeholder => "Hair trim contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :hair_cut_cont, "Hair cut contains" %>
+    <%= f.text_field :hair_cut_cont, :class => "form-control", :placeholder => "Hair cut contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :gland_cleaning_cont, "Gland cleaning contains" %>
+    <%= f.text_field :gland_cleaning_cont, :class => "form-control", :placeholder => "Gland cleaning contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :teeth_brushing_cont, "Teeth brushing contains" %>
+    <%= f.text_field :teeth_brushing_cont, :class => "form-control", :placeholder => "Teeth brushing contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ear_cleaning_cont, "Ear cleaning contains" %>
+    <%= f.text_field :ear_cleaning_cont, :class => "form-control", :placeholder => "Ear cleaning contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :pad_shaving_cont, "Pad shaving contains" %>
+    <%= f.text_field :pad_shaving_cont, :class => "form-control", :placeholder => "Pad shaving contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :nail_trim_cont, "Nail trim contains" %>
+    <%= f.text_field :nail_trim_cont, :class => "form-control", :placeholder => "Nail trim contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :condition_cont, "Condition contains" %>
+    <%= f.text_field :condition_cont, :class => "form-control", :placeholder => "Condition contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :pest_treatment_cont, "Pest treatment contains" %>
+    <%= f.text_field :pest_treatment_cont, :class => "form-control", :placeholder => "Pest treatment contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/services" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#services_filters">
+  Show filters
+</a>

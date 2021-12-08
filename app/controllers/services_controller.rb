@@ -3,7 +3,8 @@ class ServicesController < ApplicationController
 
   # GET /services
   def index
-    @services = Service.page(params[:page]).per(10)
+    @q = Service.ransack(params[:q])
+    @services = @q.result(:distinct => true).includes(:saved_appointment).page(params[:page]).per(10)
   end
 
   # GET /services/1

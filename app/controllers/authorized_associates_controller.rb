@@ -3,7 +3,8 @@ class AuthorizedAssociatesController < ApplicationController
 
   # GET /authorized_associates
   def index
-    @authorized_associates = AuthorizedAssociate.page(params[:page]).per(10)
+    @q = AuthorizedAssociate.ransack(params[:q])
+    @authorized_associates = @q.result(:distinct => true).includes(:dog_owner_profile, :dog_profile).page(params[:page]).per(10)
   end
 
   # GET /authorized_associates/1

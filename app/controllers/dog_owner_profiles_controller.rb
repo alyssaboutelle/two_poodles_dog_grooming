@@ -5,7 +5,8 @@ class DogOwnerProfilesController < ApplicationController
 
   # GET /dog_owner_profiles
   def index
-    @dog_owner_profiles = DogOwnerProfile.page(params[:page]).per(10)
+    @q = DogOwnerProfile.ransack(params[:q])
+    @dog_owner_profiles = @q.result(:distinct => true).includes(:user, :dog_profiles, :saved_appointments, :authorized_associates).page(params[:page]).per(10)
   end
 
   # GET /dog_owner_profiles/1

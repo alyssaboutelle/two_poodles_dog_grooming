@@ -3,7 +3,8 @@ class SavedAppointmentsController < ApplicationController
 
   # GET /saved_appointments
   def index
-    @saved_appointments = SavedAppointment.page(params[:page]).per(10)
+    @q = SavedAppointment.ransack(params[:q])
+    @saved_appointments = @q.result(:distinct => true).includes(:owner, :dog, :services).page(params[:page]).per(10)
   end
 
   # GET /saved_appointments/1
