@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "dog_owner_profiles#index"
   resources :authorized_associates
   resources :saved_appointments
   resources :services
