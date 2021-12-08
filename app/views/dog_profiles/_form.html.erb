@@ -1,0 +1,187 @@
+<% was_validated = dog_profile.errors.any? %>
+
+<%= form_with(model: dog_profile, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for dog_name start -->
+  <div class="form-group">
+    <% dog_name_class = "form-control" %>
+    <% dog_name_was_invalid = dog_profile.errors.include?(:dog_name) %>
+
+    <% if was_validated %>
+      <% if dog_name_was_invalid %>
+        <% dog_name_class << " is-invalid" %>
+      <% else %>
+        <% dog_name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :dog_name %>
+    <!-- Input for dog_name start -->
+    <%= f.text_field :dog_name, class: dog_name_class, placeholder: "Enter dog name" %>
+    <!-- Input for dog_name end -->
+    <% if dog_name_was_invalid %>
+      <% dog_profile.errors.full_messages_for(:dog_name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for dog_name end -->
+  <!-- Label and input for owner_id start -->
+  <div class="form-group">
+    <% owner_class = "form-control" %>
+    <% owner_was_invalid = dog_profile.errors.include?(:owner) %>
+
+    <% if was_validated %>
+      <% if owner_was_invalid %>
+        <% owner_class << " is-invalid" %>
+      <% else %>
+        <% owner_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :owner_id %>
+    <!-- Input for owner_id start -->
+    <%= f.number_field :owner_id, class: owner_class, placeholder: "Enter owner" %>
+    <!-- Input for owner_id end -->
+    <% if owner_was_invalid %>
+      <% dog_profile.errors.full_messages_for(:owner).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for owner_id end -->
+  <!-- Label and input for breed start -->
+  <div class="form-group">
+    <% breed_class = "form-control" %>
+    <% breed_was_invalid = dog_profile.errors.include?(:breed) %>
+
+    <% if was_validated %>
+      <% if breed_was_invalid %>
+        <% breed_class << " is-invalid" %>
+      <% else %>
+        <% breed_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :breed %>
+    <!-- Input for breed start -->
+    <%= f.text_field :breed, class: breed_class, placeholder: "Enter breed" %>
+    <!-- Input for breed end -->
+    <% if breed_was_invalid %>
+      <% dog_profile.errors.full_messages_for(:breed).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for breed end -->
+  <!-- Label and input for date_of_birth start -->
+  <div class="form-group">
+    <% date_of_birth_class = "form-control" %>
+    <% date_of_birth_was_invalid = dog_profile.errors.include?(:date_of_birth) %>
+
+    <% if was_validated %>
+      <% if date_of_birth_was_invalid %>
+        <% date_of_birth_class << " is-invalid" %>
+      <% else %>
+        <% date_of_birth_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :date_of_birth %>
+    <!-- Input for date_of_birth start -->
+    <%= f.text_field :date_of_birth, class: date_of_birth_class, placeholder: "Enter date of birth" %>
+    <!-- Input for date_of_birth end -->
+    <% if date_of_birth_was_invalid %>
+      <% dog_profile.errors.full_messages_for(:date_of_birth).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for date_of_birth end -->
+  <!-- Label and input for allergies start -->
+  <div class="form-group">
+    <% allergy_class = "form-control" %>
+    <% allergy_was_invalid = dog_profile.errors.include?(:allergy) %>
+
+    <% if was_validated %>
+      <% if allergy_was_invalid %>
+        <% allergy_class << " is-invalid" %>
+      <% else %>
+        <% allergy_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :allergies %>
+    <!-- Input for allergies start -->
+    <%= f.text_field :allergies, class: allergy_class, placeholder: "Enter allergy" %>
+    <!-- Input for allergies end -->
+    <% if allergy_was_invalid %>
+      <% dog_profile.errors.full_messages_for(:allergy).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for allergies end -->
+  <!-- Label and input for behavior_notes start -->
+  <div class="form-group">
+    <% behavior_note_class = "form-control" %>
+    <% behavior_note_was_invalid = dog_profile.errors.include?(:behavior_note) %>
+
+    <% if was_validated %>
+      <% if behavior_note_was_invalid %>
+        <% behavior_note_class << " is-invalid" %>
+      <% else %>
+        <% behavior_note_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :behavior_notes %>
+    <!-- Input for behavior_notes start -->
+    <%= f.text_field :behavior_notes, class: behavior_note_class, placeholder: "Enter behavior note" %>
+    <!-- Input for behavior_notes end -->
+    <% if behavior_note_was_invalid %>
+      <% dog_profile.errors.full_messages_for(:behavior_note).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for behavior_notes end -->
+  <!-- Label and input for treats start -->
+  <div class="form-group">
+    <% treat_class = "form-control" %>
+    <% treat_was_invalid = dog_profile.errors.include?(:treat) %>
+
+    <% if was_validated %>
+      <% if treat_was_invalid %>
+        <% treat_class << " is-invalid" %>
+      <% else %>
+        <% treat_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :treats %>
+    <!-- Input for treats start -->
+    <%= f.text_field :treats, class: treat_class, placeholder: "Enter treat" %>
+    <!-- Input for treats end -->
+    <% if treat_was_invalid %>
+      <% dog_profile.errors.full_messages_for(:treat).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for treats end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
