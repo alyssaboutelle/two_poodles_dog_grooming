@@ -302,7 +302,7 @@
 
     <%= f.label :saved_appointment_id %>
     <!-- Input for saved_appointment_id start -->
-    <%= f.number_field :saved_appointment_id, class: saved_appointment_class, placeholder: "Enter saved appointment" %>
+    <%= f.collection_select :saved_appointment_id, SavedAppointment.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for saved_appointment_id end -->
     <% if saved_appointment_was_invalid %>
       <% service.errors.full_messages_for(:saved_appointment).each do |message| %>
