@@ -49,16 +49,20 @@
 
       <!-- Edit link dog_owner_profile start -->
       <div class="col">
-        <%= link_to edit_dog_owner_profile_url(dog_owner_profile), class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-edit"></i>
+        <% if current_user == @dog_owner_profile.user %>
+          <%= link_to edit_dog_owner_profile_url(dog_owner_profile), class: "btn btn-block btn-sm btn-outline-secondary" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Edit link dog_owner_profile end -->
 
       <!-- Delete link dog_owner_profile start -->
       <div class="col">
-        <%= link_to dog_owner_profile, method: :delete, data: { confirm: "Do you really want to delete this dog_owner_profile?" }, class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-trash-alt"></i>
+        <% if current_user == @dog_owner_profile.user %>
+          <%= link_to dog_owner_profile, method: :delete, data: { confirm: "Do you really want to delete this dog_owner_profile?" }, class: "btn btn-block btn-outline-secondary" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Delete link dog_owner_profile end -->

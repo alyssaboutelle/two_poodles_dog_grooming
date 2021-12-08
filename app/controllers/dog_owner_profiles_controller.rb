@@ -1,4 +1,6 @@
 class DogOwnerProfilesController < ApplicationController
+  before_action :current_user_must_be_dog_owner_profile_user, only: [:edit, :update, :destroy] 
+
   before_action :set_dog_owner_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /dog_owner_profiles
@@ -60,6 +62,14 @@ class DogOwnerProfilesController < ApplicationController
 
 
   private
+
+  def current_user_must_be_dog_owner_profile_user
+    set_dog_owner_profile
+    unless current_user == @dog_owner_profile.user
+      redirect_back fallback_location: root_path, alert: "You are not authorized for that."
+    end
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_dog_owner_profile
       @dog_owner_profile = DogOwnerProfile.find(params[:id])
