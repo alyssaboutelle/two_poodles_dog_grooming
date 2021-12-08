@@ -12,6 +12,8 @@ class DogOwnerProfileResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :authorized_associates
+
   has_many   :saved_appointments,
              foreign_key: :owner_id
 

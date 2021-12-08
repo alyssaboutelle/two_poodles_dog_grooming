@@ -9,6 +9,8 @@ class AuthorizedAssociateResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :dog_owner_profile
+
   # Indirect associations
 
 end
