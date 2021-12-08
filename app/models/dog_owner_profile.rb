@@ -1,6 +1,9 @@
 class DogOwnerProfile < ApplicationRecord
   # Direct associations
 
+  has_many   :authorized_associates,
+             :dependent => :destroy
+
   has_many   :saved_appointments,
              :foreign_key => "owner_id",
              :dependent => :destroy
