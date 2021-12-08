@@ -5,7 +5,7 @@ class DogOwnerProfilesController < ApplicationController
 
   # GET /dog_owner_profiles
   def index
-    @dog_owner_profiles = DogOwnerProfile.all
+    @dog_owner_profiles = DogOwnerProfile.page(params[:page]).per(10)
   end
 
   # GET /dog_owner_profiles/1

@@ -3,7 +3,7 @@ class ServicesController < ApplicationController
 
   # GET /services
   def index
-    @services = Service.all
+    @services = Service.page(params[:page]).per(10)
   end
 
   # GET /services/1

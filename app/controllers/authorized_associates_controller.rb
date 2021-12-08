@@ -3,7 +3,7 @@ class AuthorizedAssociatesController < ApplicationController
 
   # GET /authorized_associates
   def index
-    @authorized_associates = AuthorizedAssociate.all
+    @authorized_associates = AuthorizedAssociate.page(params[:page]).per(10)
   end
 
   # GET /authorized_associates/1

@@ -34,6 +34,10 @@
       <div class="list-group list-group-flush">
         <%= render collection: @authorized_associates, partial: "list_item", as: :authorized_associate %>
       </div>
+      <div class="card-footer d-flex justify-content-center">
+        <%= paginate @authorized_associates, theme: 'twitter-bootstrap-4' %>
+      </div>
+
     </div>
   </div>
 </div>
