@@ -1,6 +1,9 @@
 class SavedAppointment < ApplicationRecord
   # Direct associations
 
+  has_many   :services,
+             :dependent => :nullify
+
   belongs_to :dog,
              :class_name => "DogProfile"
 

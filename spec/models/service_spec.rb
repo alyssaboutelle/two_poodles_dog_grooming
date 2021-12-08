@@ -4,6 +4,8 @@ RSpec.describe Service, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:saved_appointment) }
+
     end
 
     describe "InDirect Associations" do
