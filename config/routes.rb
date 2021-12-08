@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :saved_appointments
   resources :services
   resources :dog_profiles
   resources :dog_owner_profiles
