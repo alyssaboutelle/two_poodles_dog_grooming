@@ -7,12 +7,20 @@
     <dl class="mb-1">
       <dt>Dog</dt>
       <!-- Display dog_id start -->
-      <dd><%= saved_appointment.dog_id %></dd>
+      <dd>
+        <% if @saved_appointment.dog.present? %>
+          <%= link_to saved_appointment.dog, saved_appointment.dog %>
+        <% end %>
+      </dd>
       <!-- Display dog_id end -->
 
       <dt>Owner</dt>
       <!-- Display owner_id start -->
-      <dd><%= saved_appointment.owner_id %></dd>
+      <dd>
+        <% if @saved_appointment.owner.present? %>
+          <%= link_to saved_appointment.owner, saved_appointment.owner %>
+        <% end %>
+      </dd>
       <!-- Display owner_id end -->
 
       <dt>Nickname for appointment</dt>

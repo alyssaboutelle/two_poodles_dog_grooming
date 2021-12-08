@@ -22,7 +22,11 @@
 
       <dt>Dog owner profile</dt>
       <!-- Display dog_owner_profile_id start -->
-      <dd><%= authorized_associate.dog_owner_profile_id %></dd>
+      <dd>
+        <% if @authorized_associate.dog_owner_profile.present? %>
+          <%= link_to authorized_associate.dog_owner_profile, authorized_associate.dog_owner_profile %>
+        <% end %>
+      </dd>
       <!-- Display dog_owner_profile_id end -->
 
     </dl>

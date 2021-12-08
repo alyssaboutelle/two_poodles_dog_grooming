@@ -62,7 +62,11 @@
 
       <dt>Saved appointment</dt>
       <!-- Display saved_appointment_id start -->
-      <dd><%= service.saved_appointment_id %></dd>
+      <dd>
+        <% if @service.saved_appointment.present? %>
+          <%= link_to service.saved_appointment, service.saved_appointment %>
+        <% end %>
+      </dd>
       <!-- Display saved_appointment_id end -->
 
     </dl>

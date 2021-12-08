@@ -12,7 +12,11 @@
 
       <dt>Owner</dt>
       <!-- Display owner_id start -->
-      <dd><%= dog_profile.owner_id %></dd>
+      <dd>
+        <% if @dog_profile.owner.present? %>
+          <%= link_to dog_profile.owner, dog_profile.owner %>
+        <% end %>
+      </dd>
       <!-- Display owner_id end -->
 
       <dt>Breed</dt>
