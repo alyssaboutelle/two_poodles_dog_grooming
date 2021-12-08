@@ -6,27 +6,21 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Dog</dt>
-      <!-- Display dog_id start -->
       <dd>
         <% if @saved_appointment.dog.present? %>
           <%= link_to saved_appointment.dog, saved_appointment.dog %>
         <% end %>
       </dd>
-      <!-- Display dog_id end -->
 
       <dt>Owner</dt>
-      <!-- Display owner_id start -->
       <dd>
         <% if @saved_appointment.owner.present? %>
           <%= link_to saved_appointment.owner, saved_appointment.owner %>
         <% end %>
       </dd>
-      <!-- Display owner_id end -->
 
       <dt>Nickname for appointment</dt>
-      <!-- Display nickname_for_appointment start -->
       <dd><%= saved_appointment.nickname_for_appointment %></dd>
-      <!-- Display nickname_for_appointment end -->
 
     </dl>
 
@@ -35,21 +29,17 @@
         <%= link_to_show_or_back saved_appointment, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link saved_appointment start -->
       <div class="col">
         <%= link_to edit_saved_appointment_url(saved_appointment), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link saved_appointment end -->
 
-      <!-- Delete link saved_appointment start -->
       <div class="col">
         <%= link_to saved_appointment, method: :delete, data: { confirm: "Do you really want to delete this saved_appointment?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link saved_appointment end -->
     </div>
   </div>
 

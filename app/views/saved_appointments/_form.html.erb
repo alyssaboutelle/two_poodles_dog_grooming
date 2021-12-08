@@ -1,7 +1,6 @@
 <% was_validated = saved_appointment.errors.any? %>
 
 <%= form_with(model: saved_appointment, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for dog_id start -->
   <div class="form-group">
     <% dog_class = "form-control" %>
     <% dog_was_invalid = saved_appointment.errors.include?(:dog) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :dog_id %>
-    <!-- Input for dog_id start -->
     <%= f.collection_select :dog_id, DogProfile.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for dog_id end -->
     <% if dog_was_invalid %>
       <% saved_appointment.errors.full_messages_for(:dog).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for dog_id end -->
-  <!-- Label and input for owner_id start -->
   <div class="form-group">
     <% owner_class = "form-control" %>
     <% owner_was_invalid = saved_appointment.errors.include?(:owner) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :owner_id %>
-    <!-- Input for owner_id start -->
     <%= f.collection_select :owner_id, DogOwnerProfile.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for owner_id end -->
     <% if owner_was_invalid %>
       <% saved_appointment.errors.full_messages_for(:owner).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for owner_id end -->
-  <!-- Label and input for nickname_for_appointment start -->
   <div class="form-group">
     <% nickname_for_appointment_class = "form-control" %>
     <% nickname_for_appointment_was_invalid = saved_appointment.errors.include?(:nickname_for_appointment) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :nickname_for_appointment %>
-    <!-- Input for nickname_for_appointment start -->
     <%= f.text_field :nickname_for_appointment, class: nickname_for_appointment_class, placeholder: "Enter nickname for appointment" %>
-    <!-- Input for nickname_for_appointment end -->
     <% if nickname_for_appointment_was_invalid %>
       <% saved_appointment.errors.full_messages_for(:nickname_for_appointment).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for nickname_for_appointment end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

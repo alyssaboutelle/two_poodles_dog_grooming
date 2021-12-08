@@ -10,18 +10,14 @@
   <ul class="list-group list-group-flush">
     <% @user.dog_owner_profiles.each do |dog_owner_profile| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to dog_owner_profile, dog_owner_profile %>
-        <!-- Show link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="user_dog_owner_profiles_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "users/user_dog_owner_profiles_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

@@ -10,24 +10,18 @@
   <ul class="list-group list-group-flush">
     <% @dog_profile.saved_appointments.each do |saved_appointment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to saved_appointment, saved_appointment %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%= link_to saved_appointment, method: :delete, data: { confirm: "Do you really want to delete this saved_appointment" } do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="dog_profile_saved_appointments_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "dog_profiles/dog_profile_saved_appointments_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
