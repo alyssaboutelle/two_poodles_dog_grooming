@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :dog_owner_profiles,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
