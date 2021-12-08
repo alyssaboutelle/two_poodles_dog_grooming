@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Services
+
+    <a data-toggle="collapse" href="#saved_appointment_services_new_form">
+      Add service
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @saved_appointment.services.each do |service| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <%= link_to service, service %>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <%= link_to service, method: :delete, data: { confirm: "Do you really want to delete this service" } do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="saved_appointment_services_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

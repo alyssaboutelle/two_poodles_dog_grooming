@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Dog Profiles
+
+    <a data-toggle="collapse" href="#dog_owner_profile_dog_profiles_new_form">
+      Add dog profile
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @dog_owner_profile.dog_profiles.each do |dog_profile| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <%= link_to dog_profile, dog_profile %>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <%= link_to dog_profile, method: :delete, data: { confirm: "Do you really want to delete this dog_profile" } do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="dog_owner_profile_dog_profiles_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>
