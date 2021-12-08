@@ -4,6 +4,8 @@ RSpec.describe DogOwnerProfile, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:saved_appointments) }
+
     it { should have_many(:dog_profiles) }
 
     it { should belong_to(:user) }

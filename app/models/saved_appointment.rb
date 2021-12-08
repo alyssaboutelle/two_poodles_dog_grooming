@@ -1,6 +1,9 @@
 class SavedAppointment < ApplicationRecord
   # Direct associations
 
+  belongs_to :owner,
+             :class_name => "DogOwnerProfile"
+
   # Indirect associations
 
   # Validations
