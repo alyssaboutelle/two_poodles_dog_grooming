@@ -20,4 +20,5 @@ class DogProfileResource < ApplicationResource
 
   # Indirect associations
 
+  has_one    :authorized_associate
 end
