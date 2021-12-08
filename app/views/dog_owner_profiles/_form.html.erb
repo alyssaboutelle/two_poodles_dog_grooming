@@ -1,0 +1,187 @@
+<% was_validated = dog_owner_profile.errors.any? %>
+
+<%= form_with(model: dog_owner_profile, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for first_name start -->
+  <div class="form-group">
+    <% first_name_class = "form-control" %>
+    <% first_name_was_invalid = dog_owner_profile.errors.include?(:first_name) %>
+
+    <% if was_validated %>
+      <% if first_name_was_invalid %>
+        <% first_name_class << " is-invalid" %>
+      <% else %>
+        <% first_name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :first_name %>
+    <!-- Input for first_name start -->
+    <%= f.text_field :first_name, class: first_name_class, placeholder: "Enter first name" %>
+    <!-- Input for first_name end -->
+    <% if first_name_was_invalid %>
+      <% dog_owner_profile.errors.full_messages_for(:first_name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for first_name end -->
+  <!-- Label and input for last_name start -->
+  <div class="form-group">
+    <% last_name_class = "form-control" %>
+    <% last_name_was_invalid = dog_owner_profile.errors.include?(:last_name) %>
+
+    <% if was_validated %>
+      <% if last_name_was_invalid %>
+        <% last_name_class << " is-invalid" %>
+      <% else %>
+        <% last_name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :last_name %>
+    <!-- Input for last_name start -->
+    <%= f.text_field :last_name, class: last_name_class, placeholder: "Enter last name" %>
+    <!-- Input for last_name end -->
+    <% if last_name_was_invalid %>
+      <% dog_owner_profile.errors.full_messages_for(:last_name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for last_name end -->
+  <!-- Label and input for phone start -->
+  <div class="form-group">
+    <% phone_class = "form-control" %>
+    <% phone_was_invalid = dog_owner_profile.errors.include?(:phone) %>
+
+    <% if was_validated %>
+      <% if phone_was_invalid %>
+        <% phone_class << " is-invalid" %>
+      <% else %>
+        <% phone_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :phone %>
+    <!-- Input for phone start -->
+    <%= f.text_field :phone, class: phone_class, placeholder: "Enter phone" %>
+    <!-- Input for phone end -->
+    <% if phone_was_invalid %>
+      <% dog_owner_profile.errors.full_messages_for(:phone).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for phone end -->
+  <!-- Label and input for home_address start -->
+  <div class="form-group">
+    <% home_address_class = "form-control" %>
+    <% home_address_was_invalid = dog_owner_profile.errors.include?(:home_address) %>
+
+    <% if was_validated %>
+      <% if home_address_was_invalid %>
+        <% home_address_class << " is-invalid" %>
+      <% else %>
+        <% home_address_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :home_address %>
+    <!-- Input for home_address start -->
+    <%= f.text_field :home_address, class: home_address_class, placeholder: "Enter home address" %>
+    <!-- Input for home_address end -->
+    <% if home_address_was_invalid %>
+      <% dog_owner_profile.errors.full_messages_for(:home_address).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for home_address end -->
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <% user_class = "form-control" %>
+    <% user_was_invalid = dog_owner_profile.errors.include?(:user) %>
+
+    <% if was_validated %>
+      <% if user_was_invalid %>
+        <% user_class << " is-invalid" %>
+      <% else %>
+        <% user_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :user_id %>
+    <!-- Input for user_id start -->
+    <%= f.number_field :user_id, class: user_class, placeholder: "Enter user" %>
+    <!-- Input for user_id end -->
+    <% if user_was_invalid %>
+      <% dog_owner_profile.errors.full_messages_for(:user).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for user_id end -->
+  <!-- Label and input for email start -->
+  <div class="form-group">
+    <% email_class = "form-control" %>
+    <% email_was_invalid = dog_owner_profile.errors.include?(:email) %>
+
+    <% if was_validated %>
+      <% if email_was_invalid %>
+        <% email_class << " is-invalid" %>
+      <% else %>
+        <% email_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :email %>
+    <!-- Input for email start -->
+    <%= f.text_field :email, class: email_class, placeholder: "Enter email" %>
+    <!-- Input for email end -->
+    <% if email_was_invalid %>
+      <% dog_owner_profile.errors.full_messages_for(:email).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for email end -->
+  <!-- Label and input for authorized_associates_id start -->
+  <div class="form-group">
+    <% authorized_associate_class = "form-control" %>
+    <% authorized_associate_was_invalid = dog_owner_profile.errors.include?(:authorized_associate) %>
+
+    <% if was_validated %>
+      <% if authorized_associate_was_invalid %>
+        <% authorized_associate_class << " is-invalid" %>
+      <% else %>
+        <% authorized_associate_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :authorized_associates_id %>
+    <!-- Input for authorized_associates_id start -->
+    <%= f.number_field :authorized_associates_id, class: authorized_associate_class, placeholder: "Enter authorized associate" %>
+    <!-- Input for authorized_associates_id end -->
+    <% if authorized_associate_was_invalid %>
+      <% dog_owner_profile.errors.full_messages_for(:authorized_associate).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for authorized_associates_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

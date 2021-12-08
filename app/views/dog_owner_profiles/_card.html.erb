@@ -1,0 +1,71 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Dog Owner Profile #<%= dog_owner_profile.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>First name</dt>
+      <!-- Display first_name start -->
+      <dd><%= dog_owner_profile.first_name %></dd>
+      <!-- Display first_name end -->
+
+      <dt>Last name</dt>
+      <!-- Display last_name start -->
+      <dd><%= dog_owner_profile.last_name %></dd>
+      <!-- Display last_name end -->
+
+      <dt>Phone</dt>
+      <!-- Display phone start -->
+      <dd><%= dog_owner_profile.phone %></dd>
+      <!-- Display phone end -->
+
+      <dt>Home address</dt>
+      <!-- Display home_address start -->
+      <dd><%= dog_owner_profile.home_address %></dd>
+      <!-- Display home_address end -->
+
+      <dt>User</dt>
+      <!-- Display user_id start -->
+      <dd><%= dog_owner_profile.user_id %></dd>
+      <!-- Display user_id end -->
+
+      <dt>Email</dt>
+      <!-- Display email start -->
+      <dd><%= dog_owner_profile.email %></dd>
+      <!-- Display email end -->
+
+      <dt>Authorized associates</dt>
+      <!-- Display authorized_associates_id start -->
+      <dd><%= dog_owner_profile.authorized_associates_id %></dd>
+      <!-- Display authorized_associates_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back dog_owner_profile, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link dog_owner_profile start -->
+      <div class="col">
+        <%= link_to edit_dog_owner_profile_url(dog_owner_profile), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link dog_owner_profile end -->
+
+      <!-- Delete link dog_owner_profile start -->
+      <div class="col">
+        <%= link_to dog_owner_profile, method: :delete, data: { confirm: "Do you really want to delete this dog_owner_profile?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link dog_owner_profile end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(dog_owner_profile.updated_at) %> ago
+  </div>
+</div>
