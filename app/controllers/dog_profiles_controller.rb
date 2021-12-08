@@ -1,27 +1,22 @@
 class DogProfilesController < ApplicationController
   before_action :set_dog_profile, only: %i[show edit update destroy]
 
-  # GET /dog_profiles
   def index
     @q = DogProfile.ransack(params[:q])
     @dog_profiles = @q.result(distinct: true).includes(:owner,
                                                        :saved_appointments, :authorized_associate).page(params[:page]).per(10)
   end
 
-  # GET /dog_profiles/1
   def show
     @saved_appointment = SavedAppointment.new
   end
 
-  # GET /dog_profiles/new
   def new
     @dog_profile = DogProfile.new
   end
 
-  # GET /dog_profiles/1/edit
   def edit; end
 
-  # POST /dog_profiles
   def create
     @dog_profile = DogProfile.new(dog_profile_params)
 
@@ -37,7 +32,6 @@ class DogProfilesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /dog_profiles/1
   def update
     if @dog_profile.update(dog_profile_params)
       redirect_to @dog_profile, notice: "Dog profile was successfully updated."
@@ -46,7 +40,6 @@ class DogProfilesController < ApplicationController
     end
   end
 
-  # DELETE /dog_profiles/1
   def destroy
     @dog_profile.destroy
     message = "DogProfile was successfully deleted."
@@ -59,12 +52,10 @@ class DogProfilesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_dog_profile
     @dog_profile = DogProfile.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def dog_profile_params
     params.require(:dog_profile).permit(:dog_name, :owner_id, :breed,
                                         :date_of_birth, :allergies, :behavior_notes, :treats)
