@@ -1,5 +1,7 @@
 ActiveAdmin.register SavedAppointment do
 
+ permit_params :dog_id, :owner_id, :nickname_for_appointment
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
