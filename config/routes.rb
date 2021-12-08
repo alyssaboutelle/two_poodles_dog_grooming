@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :authorized_associates
   resources :saved_appointments
   resources :services
   resources :dog_profiles
