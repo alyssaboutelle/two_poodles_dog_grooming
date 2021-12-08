@@ -8,6 +8,7 @@ class SavedAppointmentsController < ApplicationController
 
   # GET /saved_appointments/1
   def show
+    @service = Service.new
   end
 
   # GET /saved_appointments/new
@@ -24,7 +25,12 @@ class SavedAppointmentsController < ApplicationController
     @saved_appointment = SavedAppointment.new(saved_appointment_params)
 
     if @saved_appointment.save
-      redirect_to @saved_appointment, notice: 'Saved appointment was successfully created.'
+      message = 'SavedAppointment was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @saved_appointment, notice: message
+      end
     else
       render :new
     end

@@ -1,0 +1,72 @@
+<!-- Form dog_owner_profile start -->
+<%= form_with(model: @dog_owner_profile, local: true) do |f| %>
+<!-- Form dog_owner_profile end -->
+
+  <!-- Label and input for first_name start -->
+  <div class="form-group">
+    <%= f.label :first_name %>
+
+    <!-- Input for first_name start -->
+    <%= f.text_field :first_name, class: "form-control" %>
+    <!-- Input for first_name end -->
+  </div>
+  <!-- Label and input for first_name end -->
+
+  <!-- Label and input for last_name start -->
+  <div class="form-group">
+    <%= f.label :last_name %>
+
+    <!-- Input for last_name start -->
+    <%= f.text_field :last_name, class: "form-control" %>
+    <!-- Input for last_name end -->
+  </div>
+  <!-- Label and input for last_name end -->
+
+  <!-- Label and input for phone start -->
+  <div class="form-group">
+    <%= f.label :phone %>
+
+    <!-- Input for phone start -->
+    <%= f.text_field :phone, class: "form-control" %>
+    <!-- Input for phone end -->
+  </div>
+  <!-- Label and input for phone end -->
+
+  <!-- Label and input for home_address start -->
+  <div class="form-group">
+    <%= f.label :home_address %>
+
+    <!-- Input for home_address start -->
+    <%= f.text_field :home_address, class: "form-control" %>
+    <!-- Input for home_address end -->
+  </div>
+  <!-- Label and input for home_address end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for email start -->
+  <div class="form-group">
+    <%= f.label :email %>
+
+    <!-- Input for email start -->
+    <%= f.text_field :email, class: "form-control" %>
+    <!-- Input for email end -->
+  </div>
+  <!-- Label and input for email end -->
+
+  <!-- Label and input for authorized_associates_id start -->
+  <div class="form-group">
+    <%= f.label :authorized_associates_id %>
+
+    <!-- Input for authorized_associates_id start -->
+    <%= f.text_field :authorized_associates_id, class: "form-control" %>
+    <!-- Input for authorized_associates_id end -->
+  </div>
+  <!-- Label and input for authorized_associates_id end -->
+
+  <%= f.submit "Create dog owner profile", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

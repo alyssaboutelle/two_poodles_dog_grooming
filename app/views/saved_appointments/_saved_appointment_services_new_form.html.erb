@@ -1,0 +1,122 @@
+<!-- Form service start -->
+<%= form_with(model: @service, local: true) do |f| %>
+<!-- Form service end -->
+
+  <!-- Label and input for shampoo start -->
+  <div class="form-group">
+    <%= f.label :shampoo %>
+
+    <!-- Input for shampoo start -->
+    <%= f.text_field :shampoo, class: "form-control" %>
+    <!-- Input for shampoo end -->
+  </div>
+  <!-- Label and input for shampoo end -->
+
+  <!-- Label and input for pest_treatment start -->
+  <div class="form-group">
+    <%= f.label :pest_treatment %>
+
+    <!-- Input for pest_treatment start -->
+    <%= f.text_field :pest_treatment, class: "form-control" %>
+    <!-- Input for pest_treatment end -->
+  </div>
+  <!-- Label and input for pest_treatment end -->
+
+  <!-- Label and input for condition start -->
+  <div class="form-group">
+    <%= f.label :condition %>
+
+    <!-- Input for condition start -->
+    <%= f.text_field :condition, class: "form-control" %>
+    <!-- Input for condition end -->
+  </div>
+  <!-- Label and input for condition end -->
+
+  <!-- Label and input for nail_trim start -->
+  <div class="form-group">
+    <%= f.label :nail_trim %>
+
+    <!-- Input for nail_trim start -->
+    <%= f.text_field :nail_trim, class: "form-control" %>
+    <!-- Input for nail_trim end -->
+  </div>
+  <!-- Label and input for nail_trim end -->
+
+  <!-- Label and input for pad_shaving start -->
+  <div class="form-group">
+    <%= f.label :pad_shaving %>
+
+    <!-- Input for pad_shaving start -->
+    <%= f.text_field :pad_shaving, class: "form-control" %>
+    <!-- Input for pad_shaving end -->
+  </div>
+  <!-- Label and input for pad_shaving end -->
+
+  <!-- Label and input for ear_cleaning start -->
+  <div class="form-group">
+    <%= f.label :ear_cleaning %>
+
+    <!-- Input for ear_cleaning start -->
+    <%= f.text_field :ear_cleaning, class: "form-control" %>
+    <!-- Input for ear_cleaning end -->
+  </div>
+  <!-- Label and input for ear_cleaning end -->
+
+  <!-- Label and input for teeth_brushing start -->
+  <div class="form-group">
+    <%= f.label :teeth_brushing %>
+
+    <!-- Input for teeth_brushing start -->
+    <%= f.text_field :teeth_brushing, class: "form-control" %>
+    <!-- Input for teeth_brushing end -->
+  </div>
+  <!-- Label and input for teeth_brushing end -->
+
+  <!-- Label and input for gland_cleaning start -->
+  <div class="form-group">
+    <%= f.label :gland_cleaning %>
+
+    <!-- Input for gland_cleaning start -->
+    <%= f.text_field :gland_cleaning, class: "form-control" %>
+    <!-- Input for gland_cleaning end -->
+  </div>
+  <!-- Label and input for gland_cleaning end -->
+
+  <!-- Label and input for hair_cut start -->
+  <div class="form-group">
+    <%= f.label :hair_cut %>
+
+    <!-- Input for hair_cut start -->
+    <%= f.text_field :hair_cut, class: "form-control" %>
+    <!-- Input for hair_cut end -->
+  </div>
+  <!-- Label and input for hair_cut end -->
+
+  <!-- Label and input for hair_trim start -->
+  <div class="form-group">
+    <%= f.label :hair_trim %>
+
+    <!-- Input for hair_trim start -->
+    <%= f.text_field :hair_trim, class: "form-control" %>
+    <!-- Input for hair_trim end -->
+  </div>
+  <!-- Label and input for hair_trim end -->
+
+  <!-- Label and input for brushing start -->
+  <div class="form-group">
+    <%= f.label :brushing %>
+
+    <!-- Input for brushing start -->
+    <%= f.text_field :brushing, class: "form-control" %>
+    <!-- Input for brushing end -->
+  </div>
+  <!-- Label and input for brushing end -->
+
+  <!-- Label and input for saved_appointment_id start -->
+  <!-- Input for saved_appointment_id start -->
+  <%= f.hidden_field :saved_appointment_id, value: @saved_appointment.id %>
+  <!-- Input for saved_appointment_id end -->
+  <!-- Label and input for saved_appointment_id end -->
+
+  <%= f.submit "Create service", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

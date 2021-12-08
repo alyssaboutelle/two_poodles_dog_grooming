@@ -8,6 +8,7 @@ class DogProfilesController < ApplicationController
 
   # GET /dog_profiles/1
   def show
+    @saved_appointment = SavedAppointment.new
   end
 
   # GET /dog_profiles/new
@@ -24,7 +25,12 @@ class DogProfilesController < ApplicationController
     @dog_profile = DogProfile.new(dog_profile_params)
 
     if @dog_profile.save
-      redirect_to @dog_profile, notice: 'Dog profile was successfully created.'
+      message = 'DogProfile was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @dog_profile, notice: message
+      end
     else
       render :new
     end

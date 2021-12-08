@@ -24,7 +24,12 @@ class AuthorizedAssociatesController < ApplicationController
     @authorized_associate = AuthorizedAssociate.new(authorized_associate_params)
 
     if @authorized_associate.save
-      redirect_to @authorized_associate, notice: 'Authorized associate was successfully created.'
+      message = 'AuthorizedAssociate was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @authorized_associate, notice: message
+      end
     else
       render :new
     end

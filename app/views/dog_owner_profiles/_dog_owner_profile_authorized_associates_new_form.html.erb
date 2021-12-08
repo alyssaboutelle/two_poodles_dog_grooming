@@ -1,0 +1,42 @@
+<!-- Form authorized_associate start -->
+<%= form_with(model: @authorized_associate, local: true) do |f| %>
+<!-- Form authorized_associate end -->
+
+  <!-- Label and input for first_name start -->
+  <div class="form-group">
+    <%= f.label :first_name %>
+
+    <!-- Input for first_name start -->
+    <%= f.text_field :first_name, class: "form-control" %>
+    <!-- Input for first_name end -->
+  </div>
+  <!-- Label and input for first_name end -->
+
+  <!-- Label and input for last_name start -->
+  <div class="form-group">
+    <%= f.label :last_name %>
+
+    <!-- Input for last_name start -->
+    <%= f.text_field :last_name, class: "form-control" %>
+    <!-- Input for last_name end -->
+  </div>
+  <!-- Label and input for last_name end -->
+
+  <!-- Label and input for phone start -->
+  <div class="form-group">
+    <%= f.label :phone %>
+
+    <!-- Input for phone start -->
+    <%= f.text_field :phone, class: "form-control" %>
+    <!-- Input for phone end -->
+  </div>
+  <!-- Label and input for phone end -->
+
+  <!-- Label and input for dog_owner_profile_id start -->
+  <!-- Input for dog_owner_profile_id start -->
+  <%= f.hidden_field :dog_owner_profile_id, value: @dog_owner_profile.id %>
+  <!-- Input for dog_owner_profile_id end -->
+  <!-- Label and input for dog_owner_profile_id end -->
+
+  <%= f.submit "Create authorized associate", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

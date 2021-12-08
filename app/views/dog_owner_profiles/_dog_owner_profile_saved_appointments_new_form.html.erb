@@ -1,0 +1,32 @@
+<!-- Form saved_appointment start -->
+<%= form_with(model: @saved_appointment, local: true) do |f| %>
+<!-- Form saved_appointment end -->
+
+  <!-- Label and input for dog_id start -->
+  <div class="form-group">
+    <%= f.label :dog_id %>
+
+    <!-- Input for dog_id start -->
+    <%= f.text_field :dog_id, class: "form-control" %>
+    <!-- Input for dog_id end -->
+  </div>
+  <!-- Label and input for dog_id end -->
+
+  <!-- Label and input for owner_id start -->
+  <!-- Input for owner_id start -->
+  <%= f.hidden_field :owner_id, value: @dog_owner_profile.id %>
+  <!-- Input for owner_id end -->
+  <!-- Label and input for owner_id end -->
+
+  <!-- Label and input for nickname_for_appointment start -->
+  <div class="form-group">
+    <%= f.label :nickname_for_appointment %>
+
+    <!-- Input for nickname_for_appointment start -->
+    <%= f.text_field :nickname_for_appointment, class: "form-control" %>
+    <!-- Input for nickname_for_appointment end -->
+  </div>
+  <!-- Label and input for nickname_for_appointment end -->
+
+  <%= f.submit "Create saved appointment", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

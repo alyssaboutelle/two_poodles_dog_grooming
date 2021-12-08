@@ -1,0 +1,72 @@
+<!-- Form dog_profile start -->
+<%= form_with(model: @dog_profile, local: true) do |f| %>
+<!-- Form dog_profile end -->
+
+  <!-- Label and input for dog_name start -->
+  <div class="form-group">
+    <%= f.label :dog_name %>
+
+    <!-- Input for dog_name start -->
+    <%= f.text_field :dog_name, class: "form-control" %>
+    <!-- Input for dog_name end -->
+  </div>
+  <!-- Label and input for dog_name end -->
+
+  <!-- Label and input for owner_id start -->
+  <!-- Input for owner_id start -->
+  <%= f.hidden_field :owner_id, value: @dog_owner_profile.id %>
+  <!-- Input for owner_id end -->
+  <!-- Label and input for owner_id end -->
+
+  <!-- Label and input for breed start -->
+  <div class="form-group">
+    <%= f.label :breed %>
+
+    <!-- Input for breed start -->
+    <%= f.text_field :breed, class: "form-control" %>
+    <!-- Input for breed end -->
+  </div>
+  <!-- Label and input for breed end -->
+
+  <!-- Label and input for date_of_birth start -->
+  <div class="form-group">
+    <%= f.label :date_of_birth %>
+
+    <!-- Input for date_of_birth start -->
+    <%= f.text_field :date_of_birth, class: "form-control" %>
+    <!-- Input for date_of_birth end -->
+  </div>
+  <!-- Label and input for date_of_birth end -->
+
+  <!-- Label and input for allergies start -->
+  <div class="form-group">
+    <%= f.label :allergies %>
+
+    <!-- Input for allergies start -->
+    <%= f.text_field :allergies, class: "form-control" %>
+    <!-- Input for allergies end -->
+  </div>
+  <!-- Label and input for allergies end -->
+
+  <!-- Label and input for behavior_notes start -->
+  <div class="form-group">
+    <%= f.label :behavior_notes %>
+
+    <!-- Input for behavior_notes start -->
+    <%= f.text_field :behavior_notes, class: "form-control" %>
+    <!-- Input for behavior_notes end -->
+  </div>
+  <!-- Label and input for behavior_notes end -->
+
+  <!-- Label and input for treats start -->
+  <div class="form-group">
+    <%= f.label :treats %>
+
+    <!-- Input for treats start -->
+    <%= f.text_field :treats, class: "form-control" %>
+    <!-- Input for treats end -->
+  </div>
+  <!-- Label and input for treats end -->
+
+  <%= f.submit "Create dog profile", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
