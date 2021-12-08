@@ -12,6 +12,9 @@ class DogOwnerProfileResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :dog_profiles,
+             foreign_key: :owner_id
+
   belongs_to :user
 
   # Indirect associations

@@ -12,6 +12,9 @@ class DogProfileResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :owner,
+             resource: DogOwnerProfileResource
+
   # Indirect associations
 
 end
