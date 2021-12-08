@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :services
   resources :dog_profiles
   resources :dog_owner_profiles
   devise_for :users

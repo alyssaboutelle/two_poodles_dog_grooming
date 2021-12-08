@@ -1,0 +1,96 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Service #<%= service.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Shampoo</dt>
+      <!-- Display shampoo start -->
+      <dd><%= service.shampoo %></dd>
+      <!-- Display shampoo end -->
+
+      <dt>Pest treatment</dt>
+      <!-- Display pest_treatment start -->
+      <dd><%= service.pest_treatment %></dd>
+      <!-- Display pest_treatment end -->
+
+      <dt>Condition</dt>
+      <!-- Display condition start -->
+      <dd><%= service.condition %></dd>
+      <!-- Display condition end -->
+
+      <dt>Nail trim</dt>
+      <!-- Display nail_trim start -->
+      <dd><%= service.nail_trim %></dd>
+      <!-- Display nail_trim end -->
+
+      <dt>Pad shaving</dt>
+      <!-- Display pad_shaving start -->
+      <dd><%= service.pad_shaving %></dd>
+      <!-- Display pad_shaving end -->
+
+      <dt>Ear cleaning</dt>
+      <!-- Display ear_cleaning start -->
+      <dd><%= service.ear_cleaning %></dd>
+      <!-- Display ear_cleaning end -->
+
+      <dt>Teeth brushing</dt>
+      <!-- Display teeth_brushing start -->
+      <dd><%= service.teeth_brushing %></dd>
+      <!-- Display teeth_brushing end -->
+
+      <dt>Gland cleaning</dt>
+      <!-- Display gland_cleaning start -->
+      <dd><%= service.gland_cleaning %></dd>
+      <!-- Display gland_cleaning end -->
+
+      <dt>Hair cut</dt>
+      <!-- Display hair_cut start -->
+      <dd><%= service.hair_cut %></dd>
+      <!-- Display hair_cut end -->
+
+      <dt>Hair trim</dt>
+      <!-- Display hair_trim start -->
+      <dd><%= service.hair_trim %></dd>
+      <!-- Display hair_trim end -->
+
+      <dt>Brushing</dt>
+      <!-- Display brushing start -->
+      <dd><%= service.brushing %></dd>
+      <!-- Display brushing end -->
+
+      <dt>Saved appointment</dt>
+      <!-- Display saved_appointment_id start -->
+      <dd><%= service.saved_appointment_id %></dd>
+      <!-- Display saved_appointment_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back service, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link service start -->
+      <div class="col">
+        <%= link_to edit_service_url(service), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link service end -->
+
+      <!-- Delete link service start -->
+      <div class="col">
+        <%= link_to service, method: :delete, data: { confirm: "Do you really want to delete this service?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link service end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(service.updated_at) %> ago
+  </div>
+</div>

@@ -1,0 +1,317 @@
+<% was_validated = service.errors.any? %>
+
+<%= form_with(model: service, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for shampoo start -->
+  <div class="form-group">
+    <% shampoo_class = "form-control" %>
+    <% shampoo_was_invalid = service.errors.include?(:shampoo) %>
+
+    <% if was_validated %>
+      <% if shampoo_was_invalid %>
+        <% shampoo_class << " is-invalid" %>
+      <% else %>
+        <% shampoo_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :shampoo %>
+    <!-- Input for shampoo start -->
+    <%= f.text_field :shampoo, class: shampoo_class, placeholder: "Enter shampoo" %>
+    <!-- Input for shampoo end -->
+    <% if shampoo_was_invalid %>
+      <% service.errors.full_messages_for(:shampoo).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for shampoo end -->
+  <!-- Label and input for pest_treatment start -->
+  <div class="form-group">
+    <% pest_treatment_class = "form-control" %>
+    <% pest_treatment_was_invalid = service.errors.include?(:pest_treatment) %>
+
+    <% if was_validated %>
+      <% if pest_treatment_was_invalid %>
+        <% pest_treatment_class << " is-invalid" %>
+      <% else %>
+        <% pest_treatment_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :pest_treatment %>
+    <!-- Input for pest_treatment start -->
+    <%= f.text_field :pest_treatment, class: pest_treatment_class, placeholder: "Enter pest treatment" %>
+    <!-- Input for pest_treatment end -->
+    <% if pest_treatment_was_invalid %>
+      <% service.errors.full_messages_for(:pest_treatment).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for pest_treatment end -->
+  <!-- Label and input for condition start -->
+  <div class="form-group">
+    <% condition_class = "form-control" %>
+    <% condition_was_invalid = service.errors.include?(:condition) %>
+
+    <% if was_validated %>
+      <% if condition_was_invalid %>
+        <% condition_class << " is-invalid" %>
+      <% else %>
+        <% condition_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :condition %>
+    <!-- Input for condition start -->
+    <%= f.text_field :condition, class: condition_class, placeholder: "Enter condition" %>
+    <!-- Input for condition end -->
+    <% if condition_was_invalid %>
+      <% service.errors.full_messages_for(:condition).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for condition end -->
+  <!-- Label and input for nail_trim start -->
+  <div class="form-group">
+    <% nail_trim_class = "form-control" %>
+    <% nail_trim_was_invalid = service.errors.include?(:nail_trim) %>
+
+    <% if was_validated %>
+      <% if nail_trim_was_invalid %>
+        <% nail_trim_class << " is-invalid" %>
+      <% else %>
+        <% nail_trim_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :nail_trim %>
+    <!-- Input for nail_trim start -->
+    <%= f.text_field :nail_trim, class: nail_trim_class, placeholder: "Enter nail trim" %>
+    <!-- Input for nail_trim end -->
+    <% if nail_trim_was_invalid %>
+      <% service.errors.full_messages_for(:nail_trim).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for nail_trim end -->
+  <!-- Label and input for pad_shaving start -->
+  <div class="form-group">
+    <% pad_shaving_class = "form-control" %>
+    <% pad_shaving_was_invalid = service.errors.include?(:pad_shaving) %>
+
+    <% if was_validated %>
+      <% if pad_shaving_was_invalid %>
+        <% pad_shaving_class << " is-invalid" %>
+      <% else %>
+        <% pad_shaving_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :pad_shaving %>
+    <!-- Input for pad_shaving start -->
+    <%= f.text_field :pad_shaving, class: pad_shaving_class, placeholder: "Enter pad shaving" %>
+    <!-- Input for pad_shaving end -->
+    <% if pad_shaving_was_invalid %>
+      <% service.errors.full_messages_for(:pad_shaving).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for pad_shaving end -->
+  <!-- Label and input for ear_cleaning start -->
+  <div class="form-group">
+    <% ear_cleaning_class = "form-control" %>
+    <% ear_cleaning_was_invalid = service.errors.include?(:ear_cleaning) %>
+
+    <% if was_validated %>
+      <% if ear_cleaning_was_invalid %>
+        <% ear_cleaning_class << " is-invalid" %>
+      <% else %>
+        <% ear_cleaning_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :ear_cleaning %>
+    <!-- Input for ear_cleaning start -->
+    <%= f.text_field :ear_cleaning, class: ear_cleaning_class, placeholder: "Enter ear cleaning" %>
+    <!-- Input for ear_cleaning end -->
+    <% if ear_cleaning_was_invalid %>
+      <% service.errors.full_messages_for(:ear_cleaning).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for ear_cleaning end -->
+  <!-- Label and input for teeth_brushing start -->
+  <div class="form-group">
+    <% teeth_brushing_class = "form-control" %>
+    <% teeth_brushing_was_invalid = service.errors.include?(:teeth_brushing) %>
+
+    <% if was_validated %>
+      <% if teeth_brushing_was_invalid %>
+        <% teeth_brushing_class << " is-invalid" %>
+      <% else %>
+        <% teeth_brushing_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :teeth_brushing %>
+    <!-- Input for teeth_brushing start -->
+    <%= f.text_field :teeth_brushing, class: teeth_brushing_class, placeholder: "Enter teeth brushing" %>
+    <!-- Input for teeth_brushing end -->
+    <% if teeth_brushing_was_invalid %>
+      <% service.errors.full_messages_for(:teeth_brushing).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for teeth_brushing end -->
+  <!-- Label and input for gland_cleaning start -->
+  <div class="form-group">
+    <% gland_cleaning_class = "form-control" %>
+    <% gland_cleaning_was_invalid = service.errors.include?(:gland_cleaning) %>
+
+    <% if was_validated %>
+      <% if gland_cleaning_was_invalid %>
+        <% gland_cleaning_class << " is-invalid" %>
+      <% else %>
+        <% gland_cleaning_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :gland_cleaning %>
+    <!-- Input for gland_cleaning start -->
+    <%= f.text_field :gland_cleaning, class: gland_cleaning_class, placeholder: "Enter gland cleaning" %>
+    <!-- Input for gland_cleaning end -->
+    <% if gland_cleaning_was_invalid %>
+      <% service.errors.full_messages_for(:gland_cleaning).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for gland_cleaning end -->
+  <!-- Label and input for hair_cut start -->
+  <div class="form-group">
+    <% hair_cut_class = "form-control" %>
+    <% hair_cut_was_invalid = service.errors.include?(:hair_cut) %>
+
+    <% if was_validated %>
+      <% if hair_cut_was_invalid %>
+        <% hair_cut_class << " is-invalid" %>
+      <% else %>
+        <% hair_cut_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :hair_cut %>
+    <!-- Input for hair_cut start -->
+    <%= f.text_field :hair_cut, class: hair_cut_class, placeholder: "Enter hair cut" %>
+    <!-- Input for hair_cut end -->
+    <% if hair_cut_was_invalid %>
+      <% service.errors.full_messages_for(:hair_cut).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for hair_cut end -->
+  <!-- Label and input for hair_trim start -->
+  <div class="form-group">
+    <% hair_trim_class = "form-control" %>
+    <% hair_trim_was_invalid = service.errors.include?(:hair_trim) %>
+
+    <% if was_validated %>
+      <% if hair_trim_was_invalid %>
+        <% hair_trim_class << " is-invalid" %>
+      <% else %>
+        <% hair_trim_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :hair_trim %>
+    <!-- Input for hair_trim start -->
+    <%= f.text_field :hair_trim, class: hair_trim_class, placeholder: "Enter hair trim" %>
+    <!-- Input for hair_trim end -->
+    <% if hair_trim_was_invalid %>
+      <% service.errors.full_messages_for(:hair_trim).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for hair_trim end -->
+  <!-- Label and input for brushing start -->
+  <div class="form-group">
+    <% brushing_class = "form-control" %>
+    <% brushing_was_invalid = service.errors.include?(:brushing) %>
+
+    <% if was_validated %>
+      <% if brushing_was_invalid %>
+        <% brushing_class << " is-invalid" %>
+      <% else %>
+        <% brushing_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :brushing %>
+    <!-- Input for brushing start -->
+    <%= f.text_field :brushing, class: brushing_class, placeholder: "Enter brushing" %>
+    <!-- Input for brushing end -->
+    <% if brushing_was_invalid %>
+      <% service.errors.full_messages_for(:brushing).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for brushing end -->
+  <!-- Label and input for saved_appointment_id start -->
+  <div class="form-group">
+    <% saved_appointment_class = "form-control" %>
+    <% saved_appointment_was_invalid = service.errors.include?(:saved_appointment) %>
+
+    <% if was_validated %>
+      <% if saved_appointment_was_invalid %>
+        <% saved_appointment_class << " is-invalid" %>
+      <% else %>
+        <% saved_appointment_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :saved_appointment_id %>
+    <!-- Input for saved_appointment_id start -->
+    <%= f.number_field :saved_appointment_id, class: saved_appointment_class, placeholder: "Enter saved appointment" %>
+    <!-- Input for saved_appointment_id end -->
+    <% if saved_appointment_was_invalid %>
+      <% service.errors.full_messages_for(:saved_appointment).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for saved_appointment_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
