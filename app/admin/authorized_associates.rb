@@ -1,6 +1,5 @@
 ActiveAdmin.register AuthorizedAssociate do
-
- permit_params :first_name, :last_name, :phone, :dog_owner_profile_id
+  permit_params :first_name, :last_name, :phone, :dog_owner_profile_id
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,5 +13,4 @@ ActiveAdmin.register AuthorizedAssociate do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
 end

@@ -13,7 +13,7 @@ class Api::V1::ServicesController < Api::V1::GraphitiController
     service = ServiceResource.build(params)
 
     if service.save
-      render jsonapi: service, status: 201
+      render jsonapi: service, status: :created
     else
       render jsonapi_errors: service
     end
@@ -33,7 +33,7 @@ class Api::V1::ServicesController < Api::V1::GraphitiController
     service = ServiceResource.find(params)
 
     if service.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: service
     end

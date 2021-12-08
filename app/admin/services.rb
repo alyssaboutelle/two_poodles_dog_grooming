@@ -1,6 +1,6 @@
 ActiveAdmin.register Service do
-
- permit_params :shampoo, :pest_treatment, :condition, :nail_trim, :pad_shaving, :ear_cleaning, :teeth_brushing, :gland_cleaning, :hair_cut, :hair_trim, :brushing, :saved_appointment_id
+  permit_params :shampoo, :pest_treatment, :condition, :nail_trim, :pad_shaving,
+                :ear_cleaning, :teeth_brushing, :gland_cleaning, :hair_cut, :hair_trim, :brushing, :saved_appointment_id
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,5 +14,4 @@ ActiveAdmin.register Service do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
 end

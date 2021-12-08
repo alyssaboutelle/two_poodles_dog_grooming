@@ -13,7 +13,7 @@ class Api::V1::AuthorizedAssociatesController < Api::V1::GraphitiController
     authorized_associate = AuthorizedAssociateResource.build(params)
 
     if authorized_associate.save
-      render jsonapi: authorized_associate, status: 201
+      render jsonapi: authorized_associate, status: :created
     else
       render jsonapi_errors: authorized_associate
     end
@@ -33,7 +33,7 @@ class Api::V1::AuthorizedAssociatesController < Api::V1::GraphitiController
     authorized_associate = AuthorizedAssociateResource.find(params)
 
     if authorized_associate.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: authorized_associate
     end

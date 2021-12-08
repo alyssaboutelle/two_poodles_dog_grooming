@@ -13,7 +13,7 @@ class Api::V1::SavedAppointmentsController < Api::V1::GraphitiController
     saved_appointment = SavedAppointmentResource.build(params)
 
     if saved_appointment.save
-      render jsonapi: saved_appointment, status: 201
+      render jsonapi: saved_appointment, status: :created
     else
       render jsonapi_errors: saved_appointment
     end
@@ -33,7 +33,7 @@ class Api::V1::SavedAppointmentsController < Api::V1::GraphitiController
     saved_appointment = SavedAppointmentResource.find(params)
 
     if saved_appointment.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: saved_appointment
     end

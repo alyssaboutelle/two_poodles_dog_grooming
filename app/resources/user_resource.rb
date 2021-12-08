@@ -7,8 +7,7 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :dog_owner_profiles
+  has_many :dog_owner_profiles
 
   # Indirect associations
-
 end

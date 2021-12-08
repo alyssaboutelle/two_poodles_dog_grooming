@@ -2,13 +2,13 @@ class SavedAppointment < ApplicationRecord
   # Direct associations
 
   has_many   :services,
-             :dependent => :nullify
+             dependent: :nullify
 
   belongs_to :dog,
-             :class_name => "DogProfile"
+             class_name: "DogProfile"
 
   belongs_to :owner,
-             :class_name => "DogOwnerProfile"
+             class_name: "DogOwnerProfile"
 
   # Indirect associations
 
@@ -19,5 +19,4 @@ class SavedAppointment < ApplicationRecord
   def to_s
     dog.to_s
   end
-
 end

@@ -6,8 +6,8 @@ class AuthorizedAssociate < ApplicationRecord
   # Indirect associations
 
   has_one    :dog_profile,
-             :through => :dog_owner_profile,
-             :source => :dog_profiles
+             through: :dog_owner_profile,
+             source: :dog_profiles
 
   # Validations
 
@@ -16,5 +16,4 @@ class AuthorizedAssociate < ApplicationRecord
   def to_s
     first_name
   end
-
 end

@@ -1,20 +1,14 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe AuthorizedAssociate, type: :model do
-  
-    describe "Direct Associations" do
-
+  describe "Direct Associations" do
     it { should belong_to(:dog_owner_profile) }
+  end
 
-    end
-
-    describe "InDirect Associations" do
-
+  describe "InDirect Associations" do
     it { should have_one(:dog_profile) }
+  end
 
-    end
-
-    describe "Validations" do
-
-    end
+  describe "Validations" do
+  end
 end

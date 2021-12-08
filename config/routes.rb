@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  scope path: ApplicationResource.endpoint_namespace, defaults: { format: :jsonapi } do
-    scope module: 'api/v1', as: 'api' do
+  scope path: ApplicationResource.endpoint_namespace,
+        defaults: { format: :jsonapi } do
+    scope module: "api/v1", as: "api" do
       resources :authorized_associates
 
       resources :saved_appointments
@@ -12,14 +13,13 @@ Rails.application.routes.draw do
       resources :dog_owner_profiles
 
       resources :users
-
     end
-    mount VandalUi::Engine, at: '/vandal'
+    mount VandalUi::Engine, at: "/vandal"
     # your routes go here
   end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root :to => "dog_owner_profiles#index"
+  root to: "dog_owner_profiles#index"
   resources :authorized_associates
   resources :saved_appointments
   resources :services

@@ -20,5 +20,4 @@ class ServiceResource < ApplicationResource
   belongs_to :saved_appointment
 
   # Indirect associations
-
 end

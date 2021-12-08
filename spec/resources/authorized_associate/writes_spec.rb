@@ -1,13 +1,13 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe AuthorizedAssociateResource, type: :resource do
-  describe 'creating' do
+  describe "creating" do
     let(:payload) do
       {
         data: {
-          type: 'authorized_associates',
-          attributes: { }
-        }
+          type: "authorized_associates",
+          attributes: {},
+        },
       }
     end
 
@@ -15,23 +15,24 @@ RSpec.describe AuthorizedAssociateResource, type: :resource do
       AuthorizedAssociateResource.build(payload)
     end
 
-    it 'works' do
-      expect {
-        expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      }.to change { AuthorizedAssociate.count }.by(1)
+    it "works" do
+      expect do
+        expect(instance.save).to eq(true),
+                                 instance.errors.full_messages.to_sentence
+      end.to change { AuthorizedAssociate.count }.by(1)
     end
   end
 
-  describe 'updating' do
+  describe "updating" do
     let!(:authorized_associate) { create(:authorized_associate) }
 
     let(:payload) do
       {
         data: {
           id: authorized_associate.id.to_s,
-          type: 'authorized_associates',
-          attributes: { } # Todo!
-        }
+          type: "authorized_associates",
+          attributes: {}, # Todo!
+        },
       }
     end
 
@@ -39,25 +40,25 @@ RSpec.describe AuthorizedAssociateResource, type: :resource do
       AuthorizedAssociateResource.find(payload)
     end
 
-    xit 'works (add some attributes and enable this spec)' do
-      expect {
+    xit "works (add some attributes and enable this spec)" do
+      expect do
         expect(instance.update_attributes).to eq(true)
-      }.to change { authorized_associate.reload.updated_at }
+      end.to change { authorized_associate.reload.updated_at }
       # .and change { authorized_associate.foo }.to('bar') <- example
     end
   end
 
-  describe 'destroying' do
+  describe "destroying" do
     let!(:authorized_associate) { create(:authorized_associate) }
 
     let(:instance) do
       AuthorizedAssociateResource.find(id: authorized_associate.id)
     end
 
-    it 'works' do
-      expect {
+    it "works" do
+      expect do
         expect(instance.destroy).to eq(true)
-      }.to change { AuthorizedAssociate.count }.by(-1)
+      end.to change { AuthorizedAssociate.count }.by(-1)
     end
   end
 end

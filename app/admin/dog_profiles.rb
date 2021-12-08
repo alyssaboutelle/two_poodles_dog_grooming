@@ -1,6 +1,6 @@
 ActiveAdmin.register DogProfile do
-
- permit_params :dog_name, :owner_id, :breed, :date_of_birth, :allergies, :behavior_notes, :treats
+  permit_params :dog_name, :owner_id, :breed, :date_of_birth, :allergies,
+                :behavior_notes, :treats
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,5 +14,4 @@ ActiveAdmin.register DogProfile do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
 end

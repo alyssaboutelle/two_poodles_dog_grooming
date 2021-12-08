@@ -17,5 +17,4 @@ class SavedAppointmentResource < ApplicationResource
              resource: DogOwnerProfileResource
 
   # Indirect associations
-
 end
