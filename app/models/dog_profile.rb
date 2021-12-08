@@ -10,6 +10,10 @@ class DogProfile < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :authorized_associate,
+             :through => :owner,
+             :source => :authorized_associates
+
   # Validations
 
   # Scopes

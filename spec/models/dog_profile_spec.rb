@@ -12,6 +12,8 @@ RSpec.describe DogProfile, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:authorized_associate) }
+
     end
 
     describe "Validations" do
