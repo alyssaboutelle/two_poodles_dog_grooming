@@ -8,6 +8,8 @@ class SavedAppointmentResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :services
+
   belongs_to :dog,
              resource: DogProfileResource
 

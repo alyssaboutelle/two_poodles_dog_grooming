@@ -17,6 +17,8 @@ class ServiceResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :saved_appointment
+
   # Indirect associations
 
 end
