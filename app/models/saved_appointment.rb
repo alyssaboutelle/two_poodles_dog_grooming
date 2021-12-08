@@ -1,6 +1,9 @@
 class SavedAppointment < ApplicationRecord
   # Direct associations
 
+  belongs_to :dog,
+             :class_name => "DogProfile"
+
   belongs_to :owner,
              :class_name => "DogOwnerProfile"
 
